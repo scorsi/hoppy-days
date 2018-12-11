@@ -1,0 +1,267 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Scripts/GameState.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://SFX/Chiptune_Adventures_1.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Scenes/PlatformTiles.tres" type="TileSet" id=4]
+[ext_resource path="res://Scenes/SpikeBottom.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/SpikeTop.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Coin.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/JumpPad.tscn" type="PackedScene" id=8]
+
+[sub_resource type="GDScript" id=1]
+
+script/source = "extends Area2D
+
+
+
+func _on_body_entered(body):
+	Global.GameState.hurt_player()
+"
+
+[node name="Level1" type="Node2D"]
+
+script = ExtResource( 1 )
+_world_limit = 3000
+_spawn_position = Vector2( 120, 598 )
+_player_scene = ExtResource( 2 )
+_starting_lives = 3
+_extra_life_cost = 20
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="." index="0"]
+
+stream = ExtResource( 3 )
+volume_db = -20.0
+pitch_scale = 1.0
+autoplay = true
+mix_target = 0
+bus = "Master"
+
+[node name="TileMap" type="TileMap" parent="." index="1"]
+
+position = Vector2( -1.35156, -1.35156 )
+mode = 0
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 2
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 196613, 4, 0, 196620, 4, 0, 196627, 4, 0, 327705, 4, 0, 589818, 0, 0, 524309, 4, 0, 589862, 4, 0, 589900, 4, 0, 655375, 4, 0, 720896, 0, 0, 720964, 4, 0, 786441, 4, 0, 786463, 4, 0, 852028, 4, 0, 852052, 0, 0, 983084, 4, 0, 983130, 0, 0, 1114164, 4, 0, 1114208, 0, 0, 1245286, 0, 0, 1245297, 0, 0 )
+_sections_unfolded = [ "Collision" ]
+
+[node name="Spikes" type="Node2D" parent="." index="2"]
+
+editor/display_folded = true
+
+[node name="SpikeBottom" parent="Spikes" index="0" instance=ExtResource( 5 )]
+
+position = Vector2( 389.722, 300.199 )
+script = SubResource( 1 )
+
+[node name="SpikeBottom2" parent="Spikes" index="1" instance=ExtResource( 5 )]
+
+position = Vector2( 835.981, 302.861 )
+script = SubResource( 1 )
+
+[node name="SpikeTop" parent="Spikes" index="2" instance=ExtResource( 6 )]
+
+position = Vector2( 2038.74, 745.136 )
+script = SubResource( 1 )
+
+[node name="SpikeTop2" parent="Spikes" index="3" instance=ExtResource( 6 )]
+
+position = Vector2( 5702.15, 806.32 )
+script = SubResource( 1 )
+
+[node name="SpikeTop3" parent="Spikes" index="4" instance=ExtResource( 6 )]
+
+position = Vector2( 6083.46, 934.151 )
+script = SubResource( 1 )
+
+[node name="SpikeTop4" parent="Spikes" index="5" instance=ExtResource( 6 )]
+
+position = Vector2( 6464.76, 1063.08 )
+script = SubResource( 1 )
+
+[node name="SpikeTop5" parent="Spikes" index="6" instance=ExtResource( 6 )]
+
+position = Vector2( 6586.04, 1193.09 )
+script = SubResource( 1 )
+
+[node name="SpikeTop6" parent="Spikes" index="7" instance=ExtResource( 6 )]
+
+position = Vector2( 6200.36, 1060.89 )
+script = SubResource( 1 )
+
+[node name="SpikeTop7" parent="Spikes" index="8" instance=ExtResource( 6 )]
+
+position = Vector2( 5816.87, 937.429 )
+script = SubResource( 1 )
+
+[node name="Coins" type="Node2D" parent="." index="3"]
+
+editor/display_folded = true
+
+[node name="Coin" parent="Coins" index="0" instance=ExtResource( 7 )]
+
+position = Vector2( 675.766, 677.118 )
+
+[node name="Coin9" parent="Coins" index="1" instance=ExtResource( 7 )]
+
+position = Vector2( 501.418, 371.671 )
+
+[node name="Coin7" parent="Coins" index="2" instance=ExtResource( 7 )]
+
+position = Vector2( 937.963, 371.671 )
+
+[node name="Coin2" parent="Coins" index="3" instance=ExtResource( 7 )]
+
+position = Vector2( 1054.2, 554.128 )
+
+[node name="Coin3" parent="Coins" index="4" instance=ExtResource( 7 )]
+
+position = Vector2( 1436.68, 440.599 )
+
+[node name="Coin4" parent="Coins" index="5" instance=ExtResource( 7 )]
+
+position = Vector2( 406.811, 118.935 )
+
+[node name="Coin17" parent="Coins" index="6" instance=ExtResource( 7 )]
+
+position = Vector2( 406.811, 118.935 )
+
+[node name="Coin27" parent="Coins" index="7" instance=ExtResource( 7 )]
+
+position = Vector2( 406.811, 118.935 )
+
+[node name="Coin8" parent="Coins" index="8" instance=ExtResource( 7 )]
+
+position = Vector2( 497.364, 121.638 )
+
+[node name="Coin16" parent="Coins" index="9" instance=ExtResource( 7 )]
+
+position = Vector2( 497.364, 121.638 )
+
+[node name="Coin32" parent="Coins" index="10" instance=ExtResource( 7 )]
+
+position = Vector2( 497.364, 121.638 )
+
+[node name="Coin10" parent="Coins" index="11" instance=ExtResource( 7 )]
+
+position = Vector2( 316.259, 116.232 )
+
+[node name="Coin18" parent="Coins" index="12" instance=ExtResource( 7 )]
+
+position = Vector2( 316.259, 116.232 )
+
+[node name="Coin26" parent="Coins" index="13" instance=ExtResource( 7 )]
+
+position = Vector2( 316.259, 116.232 )
+
+[node name="Coin11" parent="Coins" index="14" instance=ExtResource( 7 )]
+
+position = Vector2( 316.259, 6.75771 )
+
+[node name="Coin19" parent="Coins" index="15" instance=ExtResource( 7 )]
+
+position = Vector2( 316.259, 6.75771 )
+
+[node name="Coin25" parent="Coins" index="16" instance=ExtResource( 7 )]
+
+position = Vector2( 316.259, 6.75771 )
+
+[node name="Coin12" parent="Coins" index="17" instance=ExtResource( 7 )]
+
+position = Vector2( 316.259, -113.529 )
+
+[node name="Coin22" parent="Coins" index="18" instance=ExtResource( 7 )]
+
+position = Vector2( 316.259, -113.529 )
+
+[node name="Coin24" parent="Coins" index="19" instance=ExtResource( 7 )]
+
+position = Vector2( 316.259, -113.529 )
+
+[node name="Coin13" parent="Coins" index="20" instance=ExtResource( 7 )]
+
+position = Vector2( 501.418, -109.474 )
+
+[node name="Coin23" parent="Coins" index="21" instance=ExtResource( 7 )]
+
+position = Vector2( 501.418, -109.474 )
+
+[node name="Coin30" parent="Coins" index="22" instance=ExtResource( 7 )]
+
+position = Vector2( 501.418, -109.474 )
+
+[node name="Coin14" parent="Coins" index="23" instance=ExtResource( 7 )]
+
+position = Vector2( 501.418, 5.40618 )
+
+[node name="Coin15" parent="Coins" index="24" instance=ExtResource( 7 )]
+
+position = Vector2( 501.418, 6.75771 )
+
+[node name="Coin31" parent="Coins" index="25" instance=ExtResource( 7 )]
+
+position = Vector2( 501.418, 6.75771 )
+
+[node name="Coin5" parent="Coins" index="26" instance=ExtResource( 7 )]
+
+position = Vector2( 408.163, 5.40617 )
+
+[node name="Coin20" parent="Coins" index="27" instance=ExtResource( 7 )]
+
+position = Vector2( 408.163, 5.40617 )
+
+[node name="Coin28" parent="Coins" index="28" instance=ExtResource( 7 )]
+
+position = Vector2( 408.163, 5.40617 )
+
+[node name="Coin6" parent="Coins" index="29" instance=ExtResource( 7 )]
+
+position = Vector2( 406.811, -113.529 )
+
+[node name="Coin21" parent="Coins" index="30" instance=ExtResource( 7 )]
+
+position = Vector2( 406.811, -113.529 )
+
+[node name="Coin29" parent="Coins" index="31" instance=ExtResource( 7 )]
+
+position = Vector2( 406.811, -113.529 )
+
+[node name="JumpPads" type="Node2D" parent="." index="4"]
+
+[node name="JumpPad" parent="JumpPads" index="0" instance=ExtResource( 8 )]
+
+position = Vector2( -264.9, 477.091 )
+
+[connection signal="body_entered" from="Spikes/SpikeBottom" to="Spikes/SpikeBottom" method="_on_Spike_body_entered"]
+
+[connection signal="body_entered" from="Spikes/SpikeBottom2" to="Spikes/SpikeBottom2" method="_on_Spike_body_entered"]
+
+[connection signal="body_entered" from="Spikes/SpikeTop" to="Spikes/SpikeTop" method="_on_Spike_body_entered"]
+
+[connection signal="body_entered" from="Spikes/SpikeTop2" to="Spikes/SpikeTop2" method="_on_Spike_body_entered"]
+
+[connection signal="body_entered" from="Spikes/SpikeTop3" to="Spikes/SpikeTop3" method="_on_Spike_body_entered"]
+
+[connection signal="body_entered" from="Spikes/SpikeTop4" to="Spikes/SpikeTop4" method="_on_Spike_body_entered"]
+
+[connection signal="body_entered" from="Spikes/SpikeTop5" to="Spikes/SpikeTop5" method="_on_Spike_body_entered"]
+
+[connection signal="body_entered" from="Spikes/SpikeTop6" to="Spikes/SpikeTop6" method="_on_Spike_body_entered"]
+
+[connection signal="body_entered" from="Spikes/SpikeTop7" to="Spikes/SpikeTop7" method="_on_Spike_body_entered"]
+
+

@@ -1,0 +1,222 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://GFX/Environment/ground_grass.png" type="Texture" id=1]
+[ext_resource path="res://GFX/Environment/ground_cake.png" type="Texture" id=2]
+[ext_resource path="res://GFX/Environment/ground_sand.png" type="Texture" id=3]
+[ext_resource path="res://GFX/Environment/ground_snow.png" type="Texture" id=4]
+[ext_resource path="res://GFX/Environment/ground_grass_small.png" type="Texture" id=5]
+[ext_resource path="res://GFX/Environment/ground_cake_small.png" type="Texture" id=6]
+[ext_resource path="res://GFX/Environment/ground_sand_small.png" type="Texture" id=7]
+[ext_resource path="res://GFX/Environment/ground_snow_small.png" type="Texture" id=8]
+
+[node name="Platforms" type="Node2D" index="0"]
+
+[node name="Big_Grass_Platform" type="Sprite" parent="." index="0"]
+
+position = Vector2( 200, 60 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Big_Grass_Platform" index="0"]
+
+input_pickable = false
+collision_layer = 2
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Big_Grass_Platform/StaticBody2D" index="0"]
+
+visible = false
+position = Vector2( 0, 0.0611763 )
+build_mode = 0
+polygon = PoolVector2Array( -175.124, -46.9245, 173.45, -47.0713, 180.21, -45.7867, 184.982, -42.6667, 188.316, -38.201, 190.182, -31.6247, 190.133, -14.2633, 162.451, 32.0951, 156.921, 35.686, -158.558, 47.2419, -163.819, 43.235, -189.983, -14.2938, -189.989, -31.1108, -188.644, -37.1671, -185.462, -42.0305, -180.477, -45.5481 )
+
+[node name="Big_Cake_Platform" type="Sprite" parent="." index="1"]
+
+position = Vector2( 200, 240 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Big_Cake_Platform" index="0"]
+
+input_pickable = false
+collision_layer = 2
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Big_Cake_Platform/StaticBody2D" index="0"]
+
+visible = false
+position = Vector2( 0, 0.0611763 )
+build_mode = 0
+polygon = PoolVector2Array( -175.124, -46.9245, 173.45, -47.0713, 180.21, -45.7867, 184.982, -42.6667, 188.316, -38.201, 190.182, -31.6247, 190.133, -14.2633, 162.451, 32.0951, 156.921, 35.686, -158.558, 47.2419, -163.819, 43.235, -189.983, -14.2938, -189.989, -31.1108, -188.644, -37.1671, -185.462, -42.0305, -180.477, -45.5481 )
+
+[node name="Big_Sand_Platform" type="Sprite" parent="." index="2"]
+
+position = Vector2( 200, 420 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Big_Sand_Platform" index="0"]
+
+input_pickable = false
+collision_layer = 2
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Big_Sand_Platform/StaticBody2D" index="0"]
+
+visible = false
+position = Vector2( 0, 0.0611763 )
+build_mode = 0
+polygon = PoolVector2Array( -175.124, -46.9245, 173.45, -47.0713, 180.21, -45.7867, 184.982, -42.6667, 188.316, -38.201, 190.182, -31.6247, 190.133, -14.2633, 162.451, 32.0951, 156.921, 35.686, -158.558, 47.2419, -163.819, 43.235, -189.983, -14.2938, -189.989, -31.1108, -188.644, -37.1671, -185.462, -42.0305, -180.477, -45.5481 )
+
+[node name="Big_Snow_Platform" type="Sprite" parent="." index="3"]
+
+position = Vector2( 200, 600 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Big_Snow_Platform" index="0"]
+
+input_pickable = false
+collision_layer = 2
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Big_Snow_Platform/StaticBody2D" index="0"]
+
+visible = false
+position = Vector2( 0, 0.0611763 )
+build_mode = 0
+polygon = PoolVector2Array( -175.124, -46.9245, 173.45, -47.0713, 180.21, -45.7867, 184.982, -42.6667, 188.316, -38.201, 190.182, -31.6247, 190.133, -14.2633, 162.451, 32.0951, 156.921, 35.686, -158.558, 47.2419, -163.819, 43.235, -189.983, -14.2938, -189.989, -31.1108, -188.644, -37.1671, -185.462, -42.0305, -180.477, -45.5481 )
+
+[node name="Small_Grass_Platform" type="Sprite" parent="." index="4"]
+
+position = Vector2( 599.963, 60.0366 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Small_Grass_Platform" index="0"]
+
+input_pickable = false
+collision_layer = 2
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Small_Grass_Platform/StaticBody2D" index="0"]
+
+visible = false
+position = Vector2( 0.0366211, 0.0245628 )
+build_mode = 0
+polygon = PoolVector2Array( -83.0932, -50.051, 83.4499, -50.1482, 89.0149, -49.1963, 94.0673, -46.7799, 98.0946, -42.533, 100.511, -36.6751, 100.365, -16.7217, 76.3692, 47.239, 70.255, 50.3876, -74.5883, 41.1541, -80.373, 37.017, -99.4623, -16.6411, -99.7789, -32.6972, -98.0994, -39.1779, -94.733, -45.0453, -88.9898, -48.7548 )
+
+[node name="Small_Cake_Platform" type="Sprite" parent="." index="5"]
+
+position = Vector2( 600, 240 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Small_Cake_Platform" index="0"]
+
+input_pickable = false
+collision_layer = 2
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Small_Cake_Platform/StaticBody2D" index="0"]
+
+visible = false
+position = Vector2( 0.0366211, 0.0245628 )
+build_mode = 0
+polygon = PoolVector2Array( -83.0932, -50.051, 83.4499, -50.1482, 89.0149, -49.1963, 94.0673, -46.7799, 98.0946, -42.533, 100.511, -36.6751, 100.365, -16.7217, 76.3692, 47.239, 70.255, 50.3876, -74.5883, 41.1541, -80.373, 37.017, -99.4623, -16.6411, -99.7789, -32.6972, -98.0994, -39.1779, -94.733, -45.0453, -88.9898, -48.7548 )
+
+[node name="Small_Sand_Platform" type="Sprite" parent="." index="6"]
+
+position = Vector2( 600, 420 )
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Small_Sand_Platform" index="0"]
+
+input_pickable = false
+collision_layer = 2
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Small_Sand_Platform/StaticBody2D" index="0"]
+
+visible = false
+position = Vector2( 0.0366211, 0.0245628 )
+build_mode = 0
+polygon = PoolVector2Array( -83.0932, -50.051, 83.4499, -50.1482, 89.0149, -49.1963, 94.0673, -46.7799, 98.0946, -42.533, 100.511, -36.6751, 100.365, -16.7217, 76.3692, 47.239, 70.255, 50.3876, -74.5883, 41.1541, -80.373, 37.017, -99.4623, -16.6411, -99.7789, -32.6972, -98.0994, -39.1779, -94.733, -45.0453, -88.9898, -48.7548 )
+
+[node name="Small_Snow_Platform" type="Sprite" parent="." index="7"]
+
+position = Vector2( 600, 600 )
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Small_Snow_Platform" index="0"]
+
+input_pickable = false
+collision_layer = 2
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Small_Snow_Platform/StaticBody2D" index="0"]
+
+visible = false
+position = Vector2( 0.0366211, 0.0245628 )
+build_mode = 0
+polygon = PoolVector2Array( -83.0932, -50.051, 83.4499, -50.1482, 89.0149, -49.1963, 94.0673, -46.7799, 98.0946, -42.533, 100.511, -36.6751, 100.365, -16.7217, 76.3692, 47.239, 70.255, 50.3876, -74.5883, 41.1541, -80.373, 37.017, -99.4623, -16.6411, -99.7789, -32.6972, -98.0994, -39.1779, -94.733, -45.0453, -88.9898, -48.7548 )
+
+
